@@ -1,10 +1,47 @@
 .container {
+  width: 800px;
   display: block;
   margin: 0 auto;
-  padding: 50px 50px 50px 0;
   border: 1px solid red;
 }
 
 .header {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid black;
+  height: auto;
+}
+
+.left-block {
+  display: inline-block;
   text-align: center;
+  height: 100%;
+  width: 180px;
+}
+
+.right-block {
+  display: inline-block;
+  text-align:center;
+  height: 100%;
+  width: 600px;
+  border-left: 2px solid black;
+}
+
+.right-block h2 {
+  font-size: 3em;
+  margin: 0;
+  height: 100%;
+  padding-top: 10px;
+}
+
+.smile {
+  height: 130px;
+  width: auto;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+  padding-bottom: 10px;
 }
