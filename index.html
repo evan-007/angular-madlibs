@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="">
+<html lang="en" ng-app="myApp">
   <head>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/app.js"></script>
   </head>
   
   <body>
-    <div class="container">
+    <div class="container" ng-controller="mainController">
       <div class="header">
         <div class="left-block"><img src="images/face.png" class="smile"></div>
         <div class="right-block">
@@ -18,33 +19,33 @@
         <h2>Provide the following words:</h2>
         <div class="inputs">
           <div class="column">
-            <input type="text" placeholder="male name" ng-model="malename"/>
-            <input type="text" placeholder="Job title" ng-model="jobtitle"/>
-            <input type="text" placeholder="tedious task" ng-model="tedioustask"/>
+            <input type="text" ng-model="maleName"/>
+            <input type="text" ng-model="jobTitle"/>
+            <input type="text" ng-model="tediousTask"/>
           </div>
           <div class="column">
-            <input type="text" placeholder="Dirty task" ng-model="dirtytask"/>
-            <input type="text" placeholder="Celebrity" ng-model="celebrity"/>
-            <input type="text" placeholder="Useless skill" ng-model="uselessskill"/>
+            <input type="text" ng-model="dirtyTask"/>
+            <input type="text" ng-model="celebrity"/>
+            <input type="text" ng-model="uselessSkill"/>
           </div>
           <div class="column">
-            <input type="text" placeholder="Obnoxious celebrity" ng-model="obnoxiouscelebrity"/>
-            <input type="text" placeholder="Huge number" ng-model="hugenumber"/>
-            <input type="text" placeholder="Adjective" ng-model="adjective"/>
+            <input type="text" ng-model="obnoxiousCelebrity"/>
+            <input type="text" ng-model="hugeNumber"/>
+            <input type="text" ng-model="adjective"/>
           </div>
         </div><!--inputs-->  
       </div><!--main-->
       <hr>
       <div class="output">
-        <p>{{malename}} was a {{jobtitle}} who loved technology.
-          Although he loved parts of his job, he absolutely hated {{tedioustask}} and {{dirtytask}}.
-          So, {{malename}} met with his mentor {{celebrity}} who told him to learn how to
-          {{uselessskill}} with Thinkful. Thinkful didn't offer a course on {{uselessskill}} so he
+        <p>{{maleName}} was a {{jobTitle}} who loved technology.
+          Although he loved parts of his job, he absolutely hated {{tediousTask}} and {{dirtyTask}}.
+          So, {{maleName}} met with his mentor {{celebrity}} who told him to learn how to
+          {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}} so he
           studied programming instead.
         </p>
         <p>
-          What a great decision! With his new skills, {{malename}} built a(n) {{adjective}} robot
-          named {{obnoxiouscelebrity}} that not only loved {{dirtytask}}, but did it {{hugenumber}}
+          What a great decision! With his new skills, {{maleName}} built a(n) {{adjective}} robot
+          named {{obnoxiousCelebrity}} that not only loved {{dirtyTask}}, but did it {{hugeNumber}}
           times faster.
         </p>
       </div>
