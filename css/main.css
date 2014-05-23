@@ -2,14 +2,14 @@
   width: 800px;
   display: block;
   margin: 0 auto;
-  border: 1px solid red;
+  border: 2px solid black;
 }
 
 .header {
   width: 100%;
   display: block;
   margin: 0 auto;
-  border: 2px solid black;
+  border-bottom: 2px solid black;
   height: auto;
 }
 
@@ -44,4 +44,22 @@
   height: 60px;
   width: auto;
   padding-bottom: 10px;
+}
+
+.main, .output {
+  display: block;
+  margin: 0 auto;
+  width: 765px;
+  height: auto;
+}
+
+.column {
+  display: inline-block;
+  width: 30%;
+  height: auto;
+  text-align: center;
+}
+
+.inputs {
+  padding-bottom: 20px;
 }
