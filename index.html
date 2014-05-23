@@ -19,7 +19,7 @@
         <h2>Provide the following words:</h2>
         <div class="inputs">
           <div class="column">
-            <input type="text" ng-model="maleName"/>
+            <input type="text" ng-model="person.name"/>
             <input type="text" ng-model="jobTitle"/>
             <input type="text" ng-model="tediousTask"/>
           </div>
@@ -27,26 +27,34 @@
             <input type="text" ng-model="dirtyTask"/>
             <input type="text" ng-model="celebrity"/>
             <input type="text" ng-model="uselessSkill"/>
+
           </div>
           <div class="column">
             <input type="text" ng-model="obnoxiousCelebrity"/>
             <input type="text" ng-model="hugeNumber"/>
             <input type="text" ng-model="adjective"/>
           </div>
+
+            <form name="gender" class="gender">
+              <input type="radio" value="male" ng-model="person.gender" />I'm a guy<br/>
+              <input type="radio" value="female" ng-model="person.gender" />I'm a girl
+            </form>
         </div><!--inputs-->  
       </div><!--main-->
       <hr>
       <div class="output">
-        <p>{{maleName}} was a {{jobTitle}} who loved technology.
-          Although he loved parts of his job, he absolutely hated {{tediousTask}} and {{dirtyTask}}.
-          So, {{maleName}} met with his mentor {{celebrity}} who told him to learn how to
-          {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}} so he
+        <p>{{person.name}} was a {{jobTitle}} who loved technology.
+          Although {{ person.gender == 'female' ? 'she' : 'he'}} loved parts of his job, 
+          {{ person.gender == 'female' ? 'she' : 'he'}} absolutely hated {{tediousTask}} and {{dirtyTask}}.
+          So, {{maleName}} met with {{ person.gender == 'female' ? 'her' : 'his'}} mentor {{celebrity}} who
+          told {{ person.gender == 'female' ? 'her' : 'him '}} to learn how to {{uselessSkill}} with Thinkful.
+          Thinkful didn't offer a course on {{uselessSkill}} so {{ person.gender == 'female' ? 'she' : 'he'}}
           studied programming instead.
         </p>
         <p>
-          What a great decision! With his new skills, {{maleName}} built a(n) {{adjective}} robot
-          named {{obnoxiousCelebrity}} that not only loved {{dirtyTask}}, but did it {{hugeNumber}}
-          times faster.
+          What a great decision! With {{ person.gender == 'female' ? 'her' : 'his'}} new skills, {{maleName}}
+          built a(n) {{adjective}} robot named {{obnoxiousCelebrity}} that not only loved {{dirtyTask}}, but
+          did it {{hugeNumber}} times faster.
         </p>
       </div>
     </div><!--container-->

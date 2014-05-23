@@ -1,6 +1,9 @@
 angular.module('myApp', [])
   .controller('mainController', function($scope){
-    $scope.maleName = "male name",
+    $scope.person = {
+      name: "name",
+      gender: "male"
+    },
     $scope.jobTitle = "job title",
     $scope.tediousTask = "tedious task",
     $scope.dirtyTask = "dirty task",
