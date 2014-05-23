@@ -65,5 +65,10 @@
 }
 
 .gender {
-  padding-left: 33px;
+  padding-left: 50px;
+}
+
+.submitbutton {
+  float: right;
+  margin-right: 120px;
 }
