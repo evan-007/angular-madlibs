@@ -3,20 +3,26 @@ angular.module('myApp', [])
     $scope.submit = function(){
       if($scope.myform.$valid) {
         console.log('form is valid ', $scope.data);
+        $scope.finished = true;
+      } else if($scope.myform.celebrity.$error) {
+        console.log('celebrity is invalid');
       } else {
         console.log('the form is invalid');
       }
     };
-    $scope.data = {
-      name: "name",
-      gender: "male",
-      jobTitle: "job title",
-      tediousTask: "tedious task",
-      dirtyTask: "dirty task",
-      celebrity: "celebrity",
-      uselessSkill: "useless skill",
-      obnoxiousCelebrity: "obnoxious celebrity",
-      hugeNumber: "huge number",
-      adjective: "adjective"
+    $scope.clearForm = function() {
+      $scope.data = {
+        name: "",
+        gender: "",
+        jobTitle: "",
+        tediousTask: "",
+        dirtyTask: "",
+        celebrity: "",
+        uselessSkill: "",
+        obnoxiousCelebrity: "",
+        hugeNumber: "",
+        adjective: ""
+      };
     };
+
   });

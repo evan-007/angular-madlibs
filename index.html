@@ -16,36 +16,41 @@
         </div>
       </div>
       <div class="main">
-        <h2>Provide the following words:</h2>
-        <form ng-submit="submit()" name="myform" novalidate >
+        <h2 ng-hide="finished">Provide the following words:</h2>
+        <h2 ng-show="finished">Here's the results!</h2>
+
+        <form ng-submit="submitted = true; myform.$valid && submit();" ng-hide="finished" name="myform" novalidate >
           <div class="inputs">
             <div class="column">
-              <input type="text" ng-model="data.name" required/>
-              <input type="text" ng-model="data.jobTitle" required/>
-              <input type="text" ng-model="data.tediousTask" required/>
+              <input type="text" ng-model="data.name" placeholder="Name" class="form-control" required/>
+              <input type="text" ng-model="data.jobTitle" placeholder="job title" class="form-control" required/>
+              <input type="text" ng-model="data.tediousTask" placeholder="tedious task" class="form-control" required/>
             </div>
             <div class="column">
-              <input type="text" ng-model="data.dirtyTask" required/>
-              <input type="text" ng-model="data.celebrity" required/>
-              <input type="text" ng-model="data.uselessSkill" required/>
+              <input type="text" ng-model="data.dirtyTask" placeholder="dirty task" class="form-control" required/>
+              <input type="text" ng-model="data.celebrity" name="celebrity" placeholder="celebrity" class="form-control" required />
+              <input type="text" ng-model="data.uselessSkill" placeholder="useless skill" class="form-control" required/>
 
             </div>
             <div class="column">
-              <input type="text" ng-model="data.obnoxiousCelebrity" required/>
-              <input type="text" ng-model="data.hugeNumber" required/>
-              <input type="text" ng-model="data.adjective" required/>
+              <input type="text" ng-model="data.obnoxiousCelebrity" placeholder="obnoxious celebrity" class="form-control" required/>
+              <input type="number" ng-model="data.hugeNumber" placeholder="huge number" class="form-control" required/>
+              <input type="text" ng-model="data.adjective" placeholder="adjective" class="form-control" required/>
             </div>
 
             <div class="gender">
-              <input type="radio" value="male" ng-model="data.gender" />I'm a guy<br/>
-              <input type="radio" value="female" ng-model="data.gender" />I'm a girl
+              <input type="radio" value="male" ng-model="data.gender" class="form-control" required />Guy's name<br/>
+              <input type="radio" value="female" ng-model="data.gender" class="form-control" />Girl's name
             </div>
             <input type='submit' name='submit' class="submitbutton" value="Generate My Mad Lib"/>
           </div><!--inputs-->  
         </form>
       </div><!--main-->
       <hr>
-      <div class="output">
+      <div class="errors">
+        <p ng-hide="finished" ng-if="submitted === true && myform.$error">Please fill out the whole form</p>
+      </div>
+      <div class="output" ng-show="finished">
         <p>{{data.name}} was a {{data.jobTitle}} who loved technology.
           Although {{ data.gender == 'female' ? 'she' : 'he'}} loved parts of his job, 
           {{ data.gender == 'female' ? 'she' : 'he'}} absolutely hated {{data.tediousTask}} and {{data.dirtyTask}}.
@@ -59,6 +64,7 @@
           built a(n) {{data.adjective}} robot named {{data.obnoxiousCelebrity}} that not only loved {{data.dirtyTask}}, but
           did it {{data.hugeNumber}} times faster.
         </p>
+        <button ng-click="finished = false; clearForm();" class='reset'>Try again?</button>
       </div>
     </div><!--container-->
   </body>

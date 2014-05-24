@@ -72,3 +72,11 @@
   float: right;
   margin-right: 120px;
 }
+
+.form-control.ng-dirty.ng-invalid {
+  border: 1px solid red;
+}
+
+.reset {
+  margin-left: 690px;
+}
