@@ -1,3 +1,4 @@
+
 .container {
   width: 800px;
   display: block;
@@ -80,3 +81,26 @@
 .reset {
   margin-left: 690px;
 }
+
+.textbend, .inputs, .output {
+  transition:  .5s linear all;
+  font-size: 1.5em;
+}
+
+.textbend.ng-enter, .inputs.ng-enter, .output.ng-enter {
+  font-size: 0;
+}
+
+.textbend.ng-enter-active, .inputs.ng-enter-active, .output.ng-enter-active {
+  font-size: 1.5em;
+}
+
+.textbend.ng-leave, .inputs.ng-leave, .output.ng-leave {
+  font-size: 1.5em;
+  
+}
+
+.textbend.ng-leave-active, .inputs.ng-leave-active, .output.ng-leave-active {
+  font-size: 0em;
+}
+
