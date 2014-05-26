@@ -47,9 +47,10 @@
           </div><!--inputs-->  
         </form>
       </div><!--main-->
-      <hr>
-      <div class="errors">
-        <p ng-hide="finished" ng-if="submitted === true && myform.$error">Please fill out the whole form</p>
+      
+      <div class="errors" ng-if="submitted === true && myform.$error">
+        <hr>
+        <p ng-hide="finished">Please fill out the whole form</p>
       </div>
       <div class="output" ng-show="finished">
         <p>{{data.name}} was a {{data.jobTitle}} who loved technology.

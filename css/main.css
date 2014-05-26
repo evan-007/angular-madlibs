@@ -82,25 +82,40 @@
   margin-left: 690px;
 }
 
-.textbend, .inputs, .output {
+.textbend {
   transition:  .5s linear all;
   font-size: 1.5em;
 }
 
-.textbend.ng-enter, .inputs.ng-enter, .output.ng-enter {
+.textbend.ng-enter {
   font-size: 0;
 }
 
-.textbend.ng-enter-active, .inputs.ng-enter-active, .output.ng-enter-active {
+.textbend.ng-enter-active {
   font-size: 1.5em;
 }
 
-.textbend.ng-leave, .inputs.ng-leave, .output.ng-leave {
+.textbend.ng-leave {
   font-size: 1.5em;
   
 }
 
-.textbend.ng-leave-active, .inputs.ng-leave-active, .output.ng-leave-active {
+.textbend.ng-leave-active {
   font-size: 0em;
 }
 
+.output.ng-hide-add,
+.output.ng-hide-remove,
+.inputs.ng-hide-add,
+.inputs.ng-hide-remove {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+
+  /* remember to add this */
+  display:block!important;
+  opacity:1;
+}
+.output.ng-hide,
+.inputs.ng-hide {
+  opacity:0;
+}
