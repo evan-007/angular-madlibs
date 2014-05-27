@@ -104,6 +104,10 @@
   font-size: 0em;
 }
 
+.errors {
+  text-align: center;
+}
+
 .output.ng-hide-add,
 .output.ng-hide-remove,
 .input.ng-hide-add,
