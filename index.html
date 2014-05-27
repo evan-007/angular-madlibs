@@ -20,7 +20,7 @@
         <h2 ng-if="finished == false" class="textbend">Provide the following words:</h2>
         <h2 ng-if="finished == true" class="textbend">Here's the results!</h2>
 
-        <form ng-submit="submitted = true; myform.$valid && submit();" ng-hide="finished" name="myform" novalidate >
+        <form ng-submit="submitted = true; myform.$valid && submit();" ng-hide="finished" class="input" name="myform" novalidate >
           <div class="inputs">
             <div class="column">
               <input type="text" ng-model="data.name" placeholder="Name" class="form-control" required/>

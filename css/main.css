@@ -106,8 +106,8 @@
 
 .output.ng-hide-add,
 .output.ng-hide-remove,
-.inputs.ng-hide-add,
-.inputs.ng-hide-remove {
+.input.ng-hide-add,
+.input.ng-hide-remove {
   -webkit-transition:0.5s linear all;
   transition:0.5s linear all;
 
@@ -116,6 +116,6 @@
   opacity:1;
 }
 .output.ng-hide,
-.inputs.ng-hide {
+.input.ng-hide {
   opacity:0;
 }
