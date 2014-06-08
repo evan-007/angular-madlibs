@@ -109,14 +109,21 @@
 }
 
 .output.ng-hide-add,
-.output.ng-hide-remove,
-.input.ng-hide-add,
-.input.ng-hide-remove {
+.input.ng-hide-add{
   -webkit-transition:0.5s linear all;
   transition:0.5s linear all;
 
   /* remember to add this */
   display:block!important;
+  opacity:1;
+}
+
+.output.ng-hide-remove,
+.input.ng-hide-remove {
+  -webkit-transition:0.5s linear all .5s;
+  transition:0.5s linear all .5s;
+
+    display:block!important;
   opacity:1;
 }
 .output.ng-hide,

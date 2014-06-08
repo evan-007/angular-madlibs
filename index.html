@@ -17,8 +17,8 @@
         </div>
       </div>
       <div class="main" ng-init="finished = false">
-        <h2 ng-if="finished == false" class="textbend">Provide the following words:</h2>
-        <h2 ng-if="finished == true" class="textbend">Here's the results!</h2>
+        <h2 ng-if="finished == false" class="text-bend">Provide the following words:</h2>
+        <h2 ng-if="finished == true" class="text-bend">Here's the results!</h2>
 
         <form ng-submit="submitted = true; myform.$valid && submit();" ng-hide="finished" class="input" name="myform" novalidate >
           <div class="inputs">
@@ -48,9 +48,9 @@
         </form>
       </div><!--main-->
       
-      <div class="errors" ng-if="submitted === true && myform.$error">
+      <div ng-hide="finished" class="errors input" ng-if="submitted === true && myform.$error">
         <hr>
-        <p ng-hide="finished">Please fill out the whole form</p>
+        <p >Please fill out the whole form</p>
       </div>
       <div class="output" ng-show="finished">
         <p>{{data.name}} was a {{data.jobTitle}} who loved technology.
